@@ -1,6 +1,6 @@
 # PoisonPlantTargeter
 
-E-commerce Web is a full stack website that has similar functionality as a [online shopping platform](https://uexpress.ca/).
+Poison Plant Targeter Web is a full stack website that has similar functionality as a [edit later](http://www.lucazhou.ca/).
 
 ## Getting Started
 
