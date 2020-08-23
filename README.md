@@ -1,5 +1,8 @@
 # PoisonPlantTargeter
 
+## Get Start!
+Our model is huge. since giuthub has large file policy, we are unable to push a 500MB file to the server. However, we provide you with this [link](https://drive.google.com/file/d/1Liw_SsOnRxmRoRCWiwjjihPwjuJBspbW/view?usp=sharing). Place it in the app/ folder then you are good to go!
+
 ## Inspiration
 People are craving for outdoor activities. With cinemas and bars remain on the more dangerous side of the spectrum, national and provincial parks become a top choice for people who are eager to go out. 
 
