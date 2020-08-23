@@ -45,7 +45,7 @@ We plan to expand our dataset into plants
 
 ## Authors
 
-* **Luca(MingCong) Zhou** - *Initial work* - [chefZau](https://github.com/chefZau)
-* **Jason** - *Initial work* - [wjhlang](https://github.com/wjhlang)
-* **Claudia Lou** - *Initial work* - [ClaudiaLOU](https://github.com/ClaudiaLOU)
-* **Zoe(RuiYing) Zhang** - *Initial work* - [rzhan97](https://github.com/rzhan97)
+* **Luca(MingCong) Zhou** - *Backend, Data Collection* - [chefZau](https://github.com/chefZau)
+* **Jason** - *Machine Learing* - [wjhlang](https://github.com/wjhlang)
+* **Claudia Lou** - *Specification, Documentation* - [ClaudiaLOU](https://github.com/ClaudiaLOU)
+* **Zoe(RuiYing) Zhang** - *Backend* - [rzhan97](https://github.com/rzhan97)
