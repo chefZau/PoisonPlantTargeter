@@ -3,29 +3,59 @@
 <title>HOME | Poison Plant</title>
 {% endblock %}
 {% block body %}
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <h1>Upload an image</h1>
-            <hr>
-            <form action="/upload" method="POST" enctype="multipart/form-data">
-                <div class="input-group mb-3">
-                    <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="file" name="file" />
-                        <label class="custom-file-label" for="file">Choose file</label>
-                    </div>
-                    <div class="input-group-append">
-                        <button class="btn btn-primary">Upload</button>
-                    </div>
-                </div>
-                <script type="application/javascript">
-                $('input[type="file"]').change(function(e) {
-                    var fileName = e.target.files[0].name;
-                    $('.custom-file-label').html(fileName);
-                });
-                </script>
-            </form>
+<main role="main">
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">Mushmush</h1>
+            <p class="lead text-muted">
+                Mushmush is an app that can help you identify the poisonous mushroom wherever you are enjoy your outdoor life.
+            </p>
         </div>
-    </div>
-</div>
+    </section>
+    <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" src="../static/img/img4.jpg" alt="Card image cap">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" src="../static/img/img2.jpg" alt="Card image cap">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" src="../static/img/img3.jpg" alt="Card image cap">
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col">
+                <h1>Upload an image</h1>
+                <hr>
+                <form action="/upload" method="POST" enctype="multipart/form-data">
+                    <div class="input-group mb-3">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="file" name="file" />
+                            <label class="custom-file-label" for="file">Choose file</label>
+                        </div>
+                        <div class="input-group-append">
+                            <button class="btn btn-primary">Upload</button>
+                        </div>
+                    </div>
+                    <script type="application/javascript">
+                    $('input[type="file"]').change(function(e) {
+                        var fileName = e.target.files[0].name;
+                        $('.custom-file-label').html(fileName);
+                    });
+                    </script>
+                </form>
+            </div>
+        </div>
+    </div> <!-- /container -->
+</main>
 {% endblock %}

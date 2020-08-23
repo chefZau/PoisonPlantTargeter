@@ -4,27 +4,25 @@
 {% endblock %}
 {% block body %}
 <div class="container">
-    <h2>Select a file to upload</h2>
-    <p>
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        <ul class=flashes>
-            {% for message in messages %}
-            <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-        {% endwith %}
-    </p>
     {% if filename %}
-    <div>
-        <img src="{{ url_for('display_image', filename=filename) }}" class="img-fluid" alt="upload_image">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">{{ filename }}</h5>
+            <p class="card-text">
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                <ul class=flashes>
+                    {% for message in messages %}
+                    <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                {% endwith %}
+            </p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+        <img src="{{ url_for('display_image', filename=filename) }}" class="card-img-bottom" alt="upload_image">
     </div>
     {% endif %}
-    <form method="post" action="/predict" enctype="multipart/form-data">
-        <p>
-            <input type="submit" value="start your predict">
-        </p>
-    </form>
 </div>
 {% endblock %}
