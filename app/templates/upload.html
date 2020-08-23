@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>Display Image</title>
+{% endblock %}
+{% block body %}
+<div class="container">
+    <h2>Select a file to upload</h2>
+    <p>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul class=flashes>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+    </p>
+    {% if filename %}
+    <div>
+        <img src="{{ url_for('display_image', filename=filename) }}" class="img-fluid" alt="upload_image">
+    </div>
+    {% endif %}
+    <!-- <form method="post" action="/" enctype="multipart/form-data">
+        <dl>
+            <p>
+                <input type="file" name="file" autocomplete="off" required>
+            </p>
+        </dl>
+        <p>
+            <input type="submit" value="Submit">
+        </p>
+    </form> -->
+</div>
+{% endblock %}

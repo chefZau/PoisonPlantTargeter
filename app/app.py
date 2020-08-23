@@ -24,36 +24,30 @@ def index():
 	elif request.method == 'GET': 
 		return render_template('index.html')
 
-@app.route("/predict", methods=["GET", "POST"])
+@app.route("/predict", methods=["POST"])
 def predict():
-	# if request.method == "POST":
 
-	# 	if request.files:
-
-	# 		image = request.files["image"]
-
-	# 		print(image)d
-
-	# 		return redirect(request.url)
-
-	# return render_template("predict.html")
-	if request.files:
+	file = request.files['file']
 	
-		image = request.files["image"]
-	
-		if image.filename == '':
-			flash('No image selected for uploading')
-			return redirect(request.url)
+	if file.filename == '':
+		flash('No image selected for uploading')
+		return redirect(request.url)
+
+	if file and allowed_file(file.filename):
+		filename = secure_filename(file.filename)
+		file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+		#print('upload_image filename: ' + filename)
+		flash('Image successfully uploaded and displayed')
+		return render_template('upload.html', filename=filename)
 		
-		if image and allowed_file(image.filename):
-			filename = secure_filename(image.filename)
-			image.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-			
-			flash('Image successfully uploaded and displayed')
-			return render_template('index.html', filename=filename)
-		else:
-			flash('Allowed image types are -> png, jpg, jpeg, gif')
-			return redirect(request.url)
+	else:
+		flash('Allowed image types are -> png, jpg, jpeg, gif')
+		return redirect(request.url)
+
+@app.route('/display/<filename>')
+def display_image(filename):
+	#print('display_image filename: ' + filename)
+	return redirect(url_for('static', filename='uploads/' + filename), code=301)
 
 
 if __name__ == '__main__':
