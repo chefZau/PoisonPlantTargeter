@@ -1,36 +1,31 @@
 {% extends 'base.html' %}
-
-
 {% block head %}
-	<title>HOME | Poison Plant</title>
+<title>HOME | Poison Plant</title>
 {% endblock %}
-
-
 {% block body %}
-	
-	<h1>Testing template</h1>
-
-	<a href="predict.html">Let's Predict</a>
-
-	<div class="container">
-	    <div class="row">
-	        <div class="col">
-	            <h1>Upload an image</h1>
-	            <hr>
-	            
-	            <form action="/predict" method="POST" enctype="multipart/form-data">
-	                <div class="form-group">
-	                    <label>Select image</label>
-	                    <div class="custom-file">
-	                        <input type="file" class="custom-file-input" name="image" id="image">
-	                        <label class="custom-file-label" for="image">Select image...</label>
-	                    </div>
-	                </div>
-	                <button type="submit" class="btn btn-primary">Upload</button>
-	            </form>
-	            
-	        </div>
-	    </div>
-	</div>
-	
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Upload an image</h1>
+            <hr>
+            <form action="/upload" method="POST" enctype="multipart/form-data">
+                <div class="input-group mb-3">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="file" name="file" />
+                        <label class="custom-file-label" for="file">Choose file</label>
+                    </div>
+                    <div class="input-group-append">
+                        <button class="btn btn-primary">Upload</button>
+                    </div>
+                </div>
+                <script type="application/javascript">
+                $('input[type="file"]').change(function(e) {
+                    var fileName = e.target.files[0].name;
+                    $('.custom-file-label').html(fileName);
+                });
+                </script>
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock %}
