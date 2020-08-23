@@ -21,15 +21,10 @@
         <img src="{{ url_for('display_image', filename=filename) }}" class="img-fluid" alt="upload_image">
     </div>
     {% endif %}
-    <!-- <form method="post" action="/" enctype="multipart/form-data">
-        <dl>
-            <p>
-                <input type="file" name="file" autocomplete="off" required>
-            </p>
-        </dl>
+    <form method="post" action="/predict" enctype="multipart/form-data">
         <p>
-            <input type="submit" value="Submit">
+            <input type="submit" value="start your predict">
         </p>
-    </form> -->
+    </form>
 </div>
 {% endblock %}

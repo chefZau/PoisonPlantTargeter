@@ -24,8 +24,8 @@ def index():
 	elif request.method == 'GET': 
 		return render_template('index.html')
 
-@app.route("/predict", methods=["POST"])
-def predict():
+@app.route("/upload", methods=["POST"])
+def upload():
 
 	file = request.files['file']
 	
@@ -39,16 +39,19 @@ def predict():
 		#print('upload_image filename: ' + filename)
 		flash('Image successfully uploaded and displayed')
 		return render_template('upload.html', filename=filename)
-		
+
 	else:
 		flash('Allowed image types are -> png, jpg, jpeg, gif')
 		return redirect(request.url)
 
 @app.route('/display/<filename>')
 def display_image(filename):
-	#print('display_image filename: ' + filename)
 	return redirect(url_for('static', filename='uploads/' + filename), code=301)
 
+@app.errorhandler(404)
+def page_not_found(e):
+	# note that we set the 404 status explicitly
+	return render_template('404.html'), 404
 
 if __name__ == '__main__':
 	app.run(debug = True)
