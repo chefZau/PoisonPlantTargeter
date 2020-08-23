@@ -48,6 +48,10 @@ def upload():
 def display_image(filename):
 	return redirect(url_for('static', filename='uploads/' + filename), code=301)
 
+@app.route("/predict", methods=["POST"])
+def predict():
+	return render_template('index.html')
+
 @app.errorhandler(404)
 def page_not_found(e):
 	# note that we set the 404 status explicitly
