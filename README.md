@@ -1,7 +1,7 @@
 # PoisonPlantTargeter
 
 ## Check our DEMO!
-check our (webapp demo)[https://www.youtube.com/watch?v=HQsvmp2Te2M] on localhost:5000/
+check our [webapp demo](https://www.youtube.com/watch?v=HQsvmp2Te2M) on localhost:5000/
 
 ## Get Start!
 Our model is huge. since giuthub has large file policy, we are unable to push a 500MB file to the server. However, we provide you with this [link](https://drive.google.com/file/d/1Liw_SsOnRxmRoRCWiwjjihPwjuJBspbW/view?usp=sharing). Place it in the app/ folder then you are good to go!
