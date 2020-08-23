@@ -1,23 +1,13 @@
 {% extends 'base.html' %}
-
-
 {% block head %}
-	<title>HOME | Poison Plant</title>
+<title>PREDICT</title>
 {% endblock %}
-
-
 {% block body %}
-	
-	<h1>Testing template</h1>
-
-	<a href="predict.html">Let's Predict</a>
-
 	<div class="container">
 	    <div class="row">
 	        <div class="col">
 	            <h1>Upload an image</h1>
 	            <hr>
-	            
 	            <form action="/predict" method="POST" enctype="multipart/form-data">
 	                <div class="form-group">
 	                    <label>Select image</label>
@@ -28,9 +18,7 @@
 	                </div>
 	                <button type="submit" class="btn btn-primary">Upload</button>
 	            </form>
-	            
 	        </div>
 	    </div>
 	</div>
-	
 {% endblock %}
